@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Geunjeong">
+
+    <!-- 근정전 배경 뭘로 할지 생각, 대화 내용 추가, 텍스트 전환 코드 추가 -->
+
+    <!-- 근정전 배경 -->
+    <ImageView
+        android:id="@+id/geunjeong"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/geunjeong_in" />
+
+    <!-- 고양이1 -->
+    <ImageView
+        android:id="@+id/geunjeong_cat1"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/cat1"
+        android:background="#00ff0000" />
+
+    <!-- 고양이2 -->
+    <ImageView
+        android:id="@+id/geunjeong_cat2"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/cat2"
+        android:background="#00ff0000" />
+
+    <!-- 고양이3 -->
+    <ImageView
+        android:id="@+id/geunjeong_cat3"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/cat3"
+        android:background="#00ff0000" />
+
+    <!-- 묘종 -->
+    <ImageView
+        android:id="@+id/geunjeong_myojong"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/myojong"
+        android:background="#00ff0000" />
+
+    <!-- 대화창 -->
+    <ImageButton
+        android:id="@+id/geunjeong_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/dialog_bg" />
+
+    <!-- 이름표 -->
+    <ImageView
+        android:id="@+id/geunjeong_nametag"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toTopOf="@id/geunjeong_cat1_s1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/nametag" />
+
+    <!-- 고양이1 이름 -->
+    <TextView
+        android:id="@+id/geunjeong_cat1_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/geunjeong_nametag"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/cat1_name"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <!-- 고양이2 이름 -->
+    <TextView
+        android:id="@+id/geunjeong_cat2_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/geunjeong_nametag"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/cat2_name"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <!-- 고양이3 이름 -->
+    <TextView
+        android:id="@+id/geunjeong_cat3_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/geunjeong_nametag"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/cat3_name"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <!-- 묘종 이름 -->
+    <TextView
+        android:id="@+id/geunjeong_myojong_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/geunjeong_nametag"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/myojong_name"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <!-- 대화 내용 -->
+    <TextView
+        android:id="@+id/geunjeong_cat1_s1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/geunjeong_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/geunjeong_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/geunjeong_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/geunjeong_cat1_s1"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/geunjeong_cat1_s2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/geunjeong_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/geunjeong_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/geunjeong_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/geunjeong_cat1_s2"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/geunjeong_cat2_s1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/geunjeong_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/geunjeong_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/geunjeong_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/geunjeong_cat2_s1"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/geunjeong_cat2_s2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/geunjeong_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/geunjeong_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/geunjeong_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/geunjeong_cat2_s2"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/geunjeong_cat3_s1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/geunjeong_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/geunjeong_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/geunjeong_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/geunjeong_cat3_s1"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/geunjeong_cat3_s2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/geunjeong_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/geunjeong_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/geunjeong_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/geunjeong_cat3_s2"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/geunjeong_myojong_s1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/geunjeong_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/geunjeong_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/geunjeong_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/geunjeong_myojong_s1"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/geunjeong_myojong_s2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/geunjeong_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/geunjeong_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/geunjeong_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/geunjeong_myojong_s2"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/geunjeong_myojong_s3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/geunjeong_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/geunjeong_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/geunjeong_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/geunjeong_myojong_s3"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/geunjeong_myojong_s4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/geunjeong_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/geunjeong_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/geunjeong_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/geunjeong_myojong_s4"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+</android.support.constraint.ConstraintLayout>

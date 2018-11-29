@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Naesoju">
+
+    <!-- 대화 내용 추가, 텍스트 전환 코드 추가 -->
+
+    <!-- 내소주방 배경 -->
+    <ImageView
+        android:id="@+id/naesoju"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/naesoju" />
+
+    <!-- 상궁 -->
+    <ImageView
+        android:id="@+id/naesoju_sanggung"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/sanggung"
+        android:background="#00ff0000" />
+
+    <!-- 대화창 -->
+    <ImageButton
+        android:id="@+id/naesoju_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/dialog_bg" />
+
+    <!-- 이름표 -->
+    <ImageView
+        android:id="@+id/naesoju_nametag"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toTopOf="@id/naesoju_sanggung_s1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/nametag" />
+
+    <!-- 이름 -->
+    <TextView
+        android:id="@+id/naesoju_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/naesoju_nametag"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/sanggung_name"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <!-- 대화 내용 -->
+    <TextView
+        android:id="@+id/naesoju_sanggung_s1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/naesoju_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/naesoju_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/naesoju_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/naesoju_sanggung_s1"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/naesoju_sanggung_s2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/naesoju_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/naesoju_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/naesoju_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/naesoju_sanggung_s2"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/naesoju_sanggung_s3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/naesoju_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/naesoju_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/naesoju_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/naesoju_sanggung_s3"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/naesoju_sanggung_s4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/naesoju_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/naesoju_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/naesoju_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/naesoju_sanggung_s4"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/naesoju_sanggung_s5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/naesoju_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/naesoju_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/naesoju_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/naesoju_sanggung_s5"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/naesoju_sanggung_s6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/naesoju_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/naesoju_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/naesoju_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/naesoju_sanggung_s6"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/naesoju_sanggung_s7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/naesoju_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/naesoju_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/naesoju_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/naesoju_sanggung_s7"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/naesoju_sanggung_s8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/naesoju_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/naesoju_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/naesoju_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/naesoju_sanggung_s8"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/naesoju_sanggung_s9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/naesoju_dialog"
+        app:layout_constraintBottom_toBottomOf="@id/naesoju_dialog"
+        app:layout_constraintLeft_toLeftOf="@id/naesoju_dialog"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:text="@string/naesoju_sanggung_s9"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:maxLines="2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
+
+        <!-- 보따리 -->
+        <ImageButton
+            android:id="@+id/naesoju_pack"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/pack"
+            android:background="#00ff0000" />
+
+        <!-- 고양이 획득 여부 -->
+        <!-- 고양이1 -->
+        <ImageView
+            android:id="@+id/naesoju_cat1"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:layout_alignParentRight="true"
+            android:adjustViewBounds="true"
+            android:src="@drawable/cat1" />
+
+        <!-- 고양이2 -->
+        <ImageView
+            android:id="@+id/naesoju_cat2_black"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_toLeftOf="@id/naesoju_cat1"
+            android:layout_alignBottom="@id/naesoju_cat1"
+            android:src="@drawable/cat2_black" />
+
+        <!-- 고양이3 -->
+        <ImageView
+            android:id="@+id/naesoju_cat3_black"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_toLeftOf="@id/naesoju_cat2_black"
+            android:layout_alignBottom="@id/naesoju_cat1"
+            android:src="@drawable/cat3_black" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Intro">
+
+    <!-- 검은색 배경 -->
+    <ImageView
+        android:id="@+id/intro_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/intro_bg" />
+
+    <!-- 인트로 텍스트1 -->
+    <TextView
+        android:id="@+id/intro_txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/intro1"
+        android:fontFamily="@font/gungseo"
+        android:textSize="40sp"
+        android:textColor="#FFFFFF" />
+
+    <!-- 인트로 텍스트2 -->
+    <TextView
+        android:id="@+id/intro_txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/intro2"
+        android:fontFamily="@font/gungseo"
+        android:textSize="40sp"
+        android:textColor="#FFFFFF" />
+
+</RelativeLayout>
