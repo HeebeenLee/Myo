@@ -52,6 +52,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="10dp"
         android:text="@string/main"
+        android:fontFamily="@font/g_batang"
         android:textSize="20sp"
         android:textColor="#000000"
         android:textStyle="bold" />

@@ -13,6 +13,34 @@
         android:layout_height="match_parent"
         android:background="@drawable/sajeong" />
 
+    <!-- 전각 이름 배경 -->
+    <ImageView
+        android:id="@+id/sajeong_title_bg"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/building_name" />
+
+    <!-- 전각 이름 -->
+    <TextView
+        android:id="@+id/sajeong_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/sajeong_title"
+        android:fontFamily="@font/m_hunmin"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
     <!-- 내시 -->
     <ImageView
         android:id="@+id/sajeong_naesi"
@@ -24,6 +52,19 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:src="@drawable/naesi"
+        android:background="#00ff0000" />
+
+    <!-- 내시2 -->
+    <ImageView
+        android:id="@+id/sajeong_naesi2"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/naesi2"
         android:background="#00ff0000" />
 
     <!-- 대화창 -->
@@ -57,10 +98,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/sajeong_nametag"
+        app:layout_constraintBottom_toBottomOf="@id/sajeong_nametag"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:text="@string/naesi_name"
-        android:textSize="20sp"
+        android:fontFamily="@font/m_jeongja"
+        android:textSize="25sp"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
@@ -76,6 +119,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/sajeong_naesi_s1"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -91,6 +135,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/sajeong_naesi_s2"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -106,6 +151,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/sajeong_naesi_s3"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -121,6 +167,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/sajeong_naesi_s4"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -136,6 +183,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/sajeong_naesi_s5"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -151,6 +199,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/sajeong_naesi_s6"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -166,6 +215,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/sajeong_naesi_s7"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />

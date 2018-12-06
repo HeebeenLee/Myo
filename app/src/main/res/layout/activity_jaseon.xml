@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Jaseon">
 
-    <!-- 대화 내용 추가, 텍스트 전환 코드 추가 -->
-
     <!-- 자선당 배경 -->
     <ImageView
         android:id="@+id/jaseon"
@@ -15,10 +13,38 @@
         android:layout_height="match_parent"
         android:background="@drawable/jaseon" />
 
+    <!-- 전각 이름 배경 -->
+    <ImageView
+        android:id="@+id/jaseon_title_bg"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/building_name" />
+
+    <!-- 전각 이름 -->
+    <TextView
+        android:id="@+id/jaseon_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/jaseon_title"
+        android:fontFamily="@font/m_hunmin"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
     <!-- 세자 -->
     <ImageView
         android:id="@+id/jaseon_seja"
-        android:layout_width="400dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
@@ -26,6 +52,19 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:src="@drawable/seja"
+        android:background="#00ff0000" />
+
+    <!-- 세자2 -->
+    <ImageView
+        android:id="@+id/jaseon_seja2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/seja2"
         android:background="#00ff0000" />
 
     <!-- 대화창 -->
@@ -59,12 +98,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/jaseon_nametag"
+        app:layout_constraintBottom_toBottomOf="@id/jaseon_nametag"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:text="@string/seja_name"
-        android:textSize="20sp"
+        android:fontFamily="@font/m_jeongja"
+        android:textSize="25sp"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
+
+    <!-- 설명 돋보기 아이콘 -->
+    <ImageView
+        android:id="@+id/jaseon_info_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@id/jaseon_dialog"
+        app:layout_constraintRight_toRightOf="@id/jaseon_dialog"
+        android:layout_margin="20dp"
+        android:src="@drawable/building_info_icon" />
 
     <!-- 대화 내용 -->
     <TextView
@@ -78,6 +129,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/jaseon_seja_s1"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -93,6 +145,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/jaseon_seja_s2"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -108,6 +161,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/jaseon_seja_s3"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -123,6 +177,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/jaseon_seja_s4"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -138,6 +193,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/jaseon_seja_s5"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -153,6 +209,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/jaseon_seja_s6"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -168,6 +225,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/jaseon_seja_s7"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -183,6 +241,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/jaseon_seja_s8"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -198,6 +257,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/jaseon_seja_s9"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -213,6 +273,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/jaseon_seja_s10"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -228,6 +289,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/jaseon_seja_s11"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -243,6 +305,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/jaseon_seja_s12"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -258,6 +321,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/jaseon_seja_s13"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -273,6 +337,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/jaseon_seja_s14"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -303,6 +368,16 @@
             android:layout_alignParentRight="true"
             android:adjustViewBounds="true"
             android:src="@drawable/cat1_black" />
+
+        <!-- 고양이1 획득 -->
+        <ImageView
+            android:id="@+id/jaseon_cat1"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:layout_alignParentRight="true"
+            android:adjustViewBounds="true"
+            android:src="@drawable/cat1" />
 
         <!-- 고양이2 -->
         <ImageView

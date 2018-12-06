@@ -44,7 +44,7 @@ public class Intro extends AppCompatActivity {
                 startActivity(intro_i);
                 finish();
             }
-        }, 14000);
+        }, 11000);
     }
 
     // 백(취소)키가 눌렸을 때 종료 여부를 묻는 다이얼로그 창

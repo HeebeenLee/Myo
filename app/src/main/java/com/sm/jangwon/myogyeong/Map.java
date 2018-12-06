@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -21,12 +22,13 @@ import net.daum.mf.map.api.MapView;
 
 public class Map extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback, MapView.CurrentLocationEventListener {
 
-    private final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION =101;
-    private MapView mapView; private MapPoint mapPoint;
-    TextView tv; ToggleButton bt; Button btn;
+    private final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 101;
+    private MapView mapView;
 
-    double lat = 37.578305; double lon = 126.977358;
-    private static final String LOG_TAG = "DaumMapLibrarySample";
+    Button my_location_btn;
+
+    double lat = 37.578305;
+    double lon = 126.977358;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,102 +44,92 @@ public class Map extends AppCompatActivity implements ActivityCompat.OnRequestPe
         coveringMap();
     }
 
-    public void coveringMap(){
+    public void coveringMap() {
         mapView = new MapView(this);
         mapView.setDaumMapApiKey("9a364676ed791a769bb00c9a40c1f9df");
         ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
         mapViewContainer.addView(mapView);
-        //MapLayout mapLayout = new MapLayout(this);
-        //mapView = mapLayout.getMapView();
-        btn = (Button)   findViewById(R.id.btn);
 
+        my_location_btn = (Button) findViewById(R.id.my_location_btn);
 
         MapPoint mapPoint = MapPoint.mapPointWithGeoCoord(lat, lon);
         mapView.setMapCenterPoint(mapPoint, true);
 
-        btn.setOnClickListener(new View.OnClickListener(){
+        my_location_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                //상태받아오기 https://www.journaldev.com/10409/android-runtime-permissions-example
-                if(!checkBefore()){
+                // 상태 받아오기
+                if (!checkBefore()) {
                     checkPer();
-                }else{ findinglocation();}
+                } else {
+                    findinglocation();
+                }
             }
         });
     }
-    public boolean checkBefore(){
 
+    public boolean checkBefore() {
         int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION);
         int permissionCheck2 = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
 
-        return permissionCheck==PackageManager.PERMISSION_GRANTED &&
-                permissionCheck2==PackageManager.PERMISSION_GRANTED;
+        return permissionCheck==PackageManager.PERMISSION_GRANTED && permissionCheck2==PackageManager.PERMISSION_GRANTED;
     }
 
-    public void checkPer(){
-        /*if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)
-                ||ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {//거부를 한 적이있을 때,*/
+    public void checkPer() {
+        /* if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+                || ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) { // 거부한 적 있을 때 */
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},101);
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},101);
-       /* } else {//거부 한 적 없을 때
+        /* } else { // 거부한 적 없을 때
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},101);
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},101);
-        }*/
+        } */
     }
 
-    public void findinglocation(){
+    public void findinglocation() {
         mapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithHeading);
         mapView.setCurrentLocationEventListener(this);
+
         MapPOIItem.ImageOffset offImageAnchorPointOffset = new MapPOIItem.ImageOffset(15, 15);
-        mapView.setCustomCurrentLocationMarkerImage(R.drawable.custom_map_present, offImageAnchorPointOffset);
+
+        mapView.setCustomCurrentLocationMarkerImage(R.drawable.map_pin, offImageAnchorPointOffset);
         mapView.setShowCurrentLocationMarker(true);
     }
 
-
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
-        if (requestCode == MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION){
-            // If request is cancelled, the result arrays are empty.
-            if (grantResults.length > 0
-                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // permission was granted, yay! Do the
-                // contacts-related task you need to do.
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 findinglocation();
             } else {
                 onDestroy();
-                // permission denied, boo! Disable the
-                // functionality that depends on this permission.
             }
-            return; }// other 'case' lines to check for other permissions this app might request
+            return;
+        }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
         mapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOff);
         mapView.setShowCurrentLocationMarker(false);
     }
 
-
     @Override
     public void onCurrentLocationUpdate(MapView mapView, MapPoint mapPoint, float v) {
-        MapPoint.GeoCoordinate mapPointGeo = mapPoint.getMapPointGeoCoord();
-
     }
 
     @Override
     public void onCurrentLocationDeviceHeadingUpdate(MapView mapView, float v) {
-
     }
 
     @Override
     public void onCurrentLocationUpdateFailed(MapView mapView) {
-
     }
 
     @Override
     public void onCurrentLocationUpdateCancelled(MapView mapView) {
-
     }
 
 }

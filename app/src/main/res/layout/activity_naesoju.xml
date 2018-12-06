@@ -6,14 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".Naesoju">
 
-    <!-- 대화 내용 추가, 텍스트 전환 코드 추가 -->
-
     <!-- 내소주방 배경 -->
     <ImageView
         android:id="@+id/naesoju"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/naesoju" />
+
+    <!-- 전각 이름 배경 -->
+    <ImageView
+        android:id="@+id/naesoju_title_bg"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/building_name" />
+
+    <!-- 전각 이름 -->
+    <TextView
+        android:id="@+id/naesoju_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/naesoju_title"
+        android:fontFamily="@font/m_hunmin"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
     <!-- 상궁 -->
     <ImageView
@@ -26,6 +52,45 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:src="@drawable/sanggung"
+        android:background="#00ff0000" />
+
+    <!-- 상궁2 -->
+    <ImageView
+        android:id="@+id/naesoju_sanggung2"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/sanggung2"
+        android:background="#00ff0000" />
+
+    <!-- 상궁 웃는 표정 -->
+    <ImageView
+        android:id="@+id/naesoju_sanggung_smile"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/sanggung_smile"
+        android:background="#00ff0000" />
+
+    <!-- 상궁 웃는 표정2 -->
+    <ImageView
+        android:id="@+id/naesoju_sanggung_smile2"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/sanggung_smile2"
         android:background="#00ff0000" />
 
     <!-- 대화창 -->
@@ -59,12 +124,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/naesoju_nametag"
+        app:layout_constraintBottom_toBottomOf="@id/naesoju_nametag"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:text="@string/sanggung_name"
-        android:textSize="20sp"
+        android:fontFamily="@font/m_jeongja"
+        android:textSize="25sp"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
+
+    <!-- 설명 돋보기 아이콘 -->
+    <ImageView
+        android:id="@+id/naesoju_info_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@id/naesoju_dialog"
+        app:layout_constraintRight_toRightOf="@id/naesoju_dialog"
+        android:layout_margin="20dp"
+        android:src="@drawable/building_info_icon" />
 
     <!-- 대화 내용 -->
     <TextView
@@ -78,6 +155,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/naesoju_sanggung_s1"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -93,6 +171,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/naesoju_sanggung_s2"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -108,6 +187,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/naesoju_sanggung_s3"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -123,6 +203,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/naesoju_sanggung_s4"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -138,6 +219,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/naesoju_sanggung_s5"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -153,6 +235,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/naesoju_sanggung_s6"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -168,6 +251,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/naesoju_sanggung_s7"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -183,6 +267,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/naesoju_sanggung_s8"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -198,6 +283,7 @@
         android:layout_margin="20dp"
         android:paddingTop="5dp"
         android:text="@string/naesoju_sanggung_s9"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />

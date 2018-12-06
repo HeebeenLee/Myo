@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="@string/intro1"
-        android:fontFamily="@font/gungseo"
+        android:fontFamily="@font/m_heullim"
         android:textSize="40sp"
         android:textColor="#FFFFFF" />
 
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="@string/intro2"
-        android:fontFamily="@font/gungseo"
+        android:fontFamily="@font/m_heullim"
         android:textSize="40sp"
         android:textColor="#FFFFFF" />
 

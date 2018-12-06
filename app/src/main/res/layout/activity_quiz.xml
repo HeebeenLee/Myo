@@ -1,0 +1,142 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/quiz_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/quiz"
+    tools:context=".Quiz">
+
+    <TextView
+        android:id="@+id/jaseon_quiz_q"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="90dp"
+        android:layout_marginTop="180dp"
+        android:maxLines="2"
+        android:paddingTop="5dp"
+        android:text="@string/jaseon_quiz_q"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/naesoju_quiz_q"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="90dp"
+        android:layout_marginTop="180dp"
+        android:maxLines="2"
+        android:paddingTop="5dp"
+        android:text="@string/naesoju_quiz_q"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/qyotae_quiz_q"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="90dp"
+        android:layout_marginTop="180dp"
+        android:maxLines="2"
+        android:paddingTop="5dp"
+        android:text="@string/gyotae_quiz_q"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hyangwon_quiz_q"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="90dp"
+        android:layout_marginTop="180dp"
+        android:maxLines="2"
+        android:paddingTop="5dp"
+        android:text="@string/hyangwon_quiz_q"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sujeong_quiz_q"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="90dp"
+        android:layout_marginTop="72dp"
+        android:maxLines="2"
+        android:paddingTop="5dp"
+        android:text="@string/sujeong_quiz_q"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageButton
+        android:id="@+id/right_btn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="156dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="112dp" />
+    <!--android:src="@drawable/right"-->
+
+    <ImageButton
+        android:id="@+id/wrong_btn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginRight="116dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/nextgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/dialog_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="16dp" />
+
+</android.support.constraint.ConstraintLayout>

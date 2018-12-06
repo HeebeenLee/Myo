@@ -22,8 +22,6 @@ public class Menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         ImageButton map_btn = (ImageButton) findViewById(R.id.map_btn);
-        //ImageButton order_btn = (ImageButton) findViewById(R.id.order_btn);
-
         map_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -31,14 +29,15 @@ public class Menu extends AppCompatActivity {
                 startActivity(menu_map_i);
             }
         });
-/*
+
+        ImageButton order_btn = (ImageButton) findViewById(R.id.order_btn);
         order_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 Intent menu_list_i = new Intent(getApplicationContext(), List.class);
                 startActivity(menu_list_i);
             }
-        });*/
+        });
     }
 
 }

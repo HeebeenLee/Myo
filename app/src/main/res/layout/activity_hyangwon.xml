@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Hyangwon">
 
-    <!-- 대화 내용 추가, 텍스트 전환 코드 추가 -->
-
     <!-- 향원정 배경 -->
     <ImageView
         android:id="@+id/hyangwon"
@@ -15,9 +13,37 @@
         android:layout_height="match_parent"
         android:background="@drawable/hyangwon" />
 
+    <!-- 전각 이름 배경 -->
+    <ImageView
+        android:id="@+id/hyangwon_title_bg"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/building_name" />
+
+    <!-- 전각 이름 -->
+    <TextView
+        android:id="@+id/hyangwon_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/hyangwon_title"
+        android:fontFamily="@font/m_hunmin"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
     <!-- 태양이 -->
     <ImageView
-        android:id="@+id/hyangwon_cat3"
+        android:id="@+id/hyangwon_taeyang"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:scaleType="fitCenter"
@@ -48,7 +74,7 @@
         android:layout_height="wrap_content"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@id/hyangwon_cat3_s1"
+        app:layout_constraintBottom_toTopOf="@id/hyangwon_taeyang_s1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:src="@drawable/nametag" />
@@ -59,16 +85,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/hyangwon_nametag"
+        app:layout_constraintBottom_toBottomOf="@id/hyangwon_nametag"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:text="@string/cat3_name"
-        android:textSize="20sp"
+        android:fontFamily="@font/m_jeongja"
+        android:textSize="25sp"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
+    <!-- 설명 돋보기 아이콘 -->
+    <ImageView
+        android:id="@+id/hyangwon_info_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@id/hyangwon_dialog"
+        app:layout_constraintRight_toRightOf="@id/hyangwon_dialog"
+        android:layout_margin="20dp"
+        android:src="@drawable/building_info_icon" />
+
     <!-- 대화 내용 -->
     <TextView
-        android:id="@+id/hyangwon_cat3_s1"
+        android:id="@+id/hyangwon_taeyang_s1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/hyangwon_dialog"
@@ -77,13 +115,14 @@
         app:layout_constraintVertical_bias="0.6"
         android:layout_margin="20dp"
         android:paddingTop="5dp"
-        android:text="@string/hyangwon_cat3_s1"
+        android:text="@string/hyangwon_taeyang_s1"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
 
     <TextView
-        android:id="@+id/hyangwon_cat3_s2"
+        android:id="@+id/hyangwon_taeyang_s2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/hyangwon_dialog"
@@ -92,13 +131,14 @@
         app:layout_constraintVertical_bias="0.6"
         android:layout_margin="20dp"
         android:paddingTop="5dp"
-        android:text="@string/hyangwon_cat3_s2"
+        android:text="@string/hyangwon_taeyang_s2"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
 
     <TextView
-        android:id="@+id/hyangwon_cat3_s3"
+        android:id="@+id/hyangwon_taeyang_s3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/hyangwon_dialog"
@@ -107,13 +147,14 @@
         app:layout_constraintVertical_bias="0.6"
         android:layout_margin="20dp"
         android:paddingTop="5dp"
-        android:text="@string/hyangwon_cat3_s3"
+        android:text="@string/hyangwon_taeyang_s3"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
 
     <TextView
-        android:id="@+id/hyangwon_cat3_s4"
+        android:id="@+id/hyangwon_taeyang_s4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/hyangwon_dialog"
@@ -122,13 +163,14 @@
         app:layout_constraintVertical_bias="0.6"
         android:layout_margin="20dp"
         android:paddingTop="5dp"
-        android:text="@string/hyangwon_cat3_s4"
+        android:text="@string/hyangwon_taeyang_s4"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
 
     <TextView
-        android:id="@+id/hyangwon_cat3_s5"
+        android:id="@+id/hyangwon_taeyang_s5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/hyangwon_dialog"
@@ -137,13 +179,14 @@
         app:layout_constraintVertical_bias="0.6"
         android:layout_margin="20dp"
         android:paddingTop="5dp"
-        android:text="@string/hyangwon_cat3_s5"
+        android:text="@string/hyangwon_taeyang_s5"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
 
     <TextView
-        android:id="@+id/hyangwon_cat3_s6"
+        android:id="@+id/hyangwon_taeyang_s6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/hyangwon_dialog"
@@ -152,13 +195,14 @@
         app:layout_constraintVertical_bias="0.6"
         android:layout_margin="20dp"
         android:paddingTop="5dp"
-        android:text="@string/hyangwon_cat3_s6"
+        android:text="@string/hyangwon_taeyang_s6"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
 
     <TextView
-        android:id="@+id/hyangwon_cat3_s7"
+        android:id="@+id/hyangwon_taeyang_s7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/hyangwon_dialog"
@@ -167,13 +211,14 @@
         app:layout_constraintVertical_bias="0.6"
         android:layout_margin="20dp"
         android:paddingTop="5dp"
-        android:text="@string/hyangwon_cat3_s7"
+        android:text="@string/hyangwon_taeyang_s7"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
 
     <TextView
-        android:id="@+id/hyangwon_cat3_s8"
+        android:id="@+id/hyangwon_taeyang_s8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/hyangwon_dialog"
@@ -182,13 +227,14 @@
         app:layout_constraintVertical_bias="0.6"
         android:layout_margin="20dp"
         android:paddingTop="5dp"
-        android:text="@string/hyangwon_cat3_s8"
+        android:text="@string/hyangwon_taeyang_s8"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
 
     <TextView
-        android:id="@+id/hyangwon_cat3_s9"
+        android:id="@+id/hyangwon_taeyang_s9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/hyangwon_dialog"
@@ -197,7 +243,8 @@
         app:layout_constraintVertical_bias="0.6"
         android:layout_margin="20dp"
         android:paddingTop="5dp"
-        android:text="@string/hyangwon_cat3_s9"
+        android:text="@string/hyangwon_taeyang_s9"
+        android:fontFamily="@font/m_jeongja"
         android:textSize="20sp"
         android:textColor="#000000"
         android:maxLines="2" />
@@ -242,7 +289,7 @@
 
         <!-- 고양이3 -->
         <ImageView
-            android:id="@+id/hyangwon_cat2_black"
+            android:id="@+id/hyangwon_cat3_black"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:scaleType="fitCenter"
@@ -250,6 +297,17 @@
             android:layout_toLeftOf="@id/hyangwon_cat2"
             android:layout_alignBottom="@id/hyangwon_cat1"
             android:src="@drawable/cat3_black" />
+
+        <!-- 고양이3 획득 -->
+        <ImageView
+            android:id="@+id/hyangwon_cat3"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_toLeftOf="@id/hyangwon_cat2"
+            android:layout_alignBottom="@id/hyangwon_cat1"
+            android:src="@drawable/cat3" />
 
     </RelativeLayout>
 

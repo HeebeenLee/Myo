@@ -106,13 +106,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if((keyCode == KeyEvent.KEYCODE_BACK)) {
             AlertDialog.Builder d = new AlertDialog.Builder(MainActivity.this);
-            //d.setTitle("종료여부");
             d.setMessage("묘한 경복궁을 종료할까요?");
 
             d.setPositiveButton("예", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    // TODO Auto-generated method stub
                     MainActivity.this.finish();
                 }
             });
@@ -120,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
             d.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    // TODO Auto-generated method stub
                     dialog.cancel();
                 }
             });

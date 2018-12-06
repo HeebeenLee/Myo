@@ -6,7 +6,7 @@
 
     <!-- 인트로 -->
     <string name="intro1">묘종 10년, 신묘년</string>
-    <string name="intro2">경복궁에는 큰 소란이 인다</string>
+    <string name="intro2">경복궁에 큰 소란이 인다</string>
 
     <!-- 인물 이름 -->
     <string name="myojong_name">묘종</string>
@@ -30,19 +30,19 @@
 
     <!-- 전각 설명 -->
     <!-- 사정전 -->
-    <string name="sajeong_info">&lt; 사정전(思政殿) &gt;\n\n사정전은 정무를 보는 집무실과 같은 역할을 했던 곳으로, 왕과 신하가 머리를 맞대며 학문을 토론하는 경연이 자주 벌어지기도 했다. &apos;사정(思政)&apos;이란 생각하고 정치하라는 뜻을 담고 있다. 근정전 뒷편에 자리 잡고 있으며 좌우에 만춘전과 천추전을 두고 사정전의 공간 기능을 보완하도록 했다. 현재는 이 두 건물이 독립된 전각의 형태이지만 원래는 복도 각으로 연결되게 하였다. 사정전은 왕의 집무실인 만큼 왕의 주요활동이 행해진 곳이기도 하다. 특히 세종 대에는 종친들을 모아 연회를 베풀었을 뿐만 아니라, 공을 치는 놀이 &apos;타구&apos;가 자주 벌어졌다는 기록이 남아 있다. 세종은 왕자 시절부터 하인들과 어울려 타구를 했다. 특히 날씨가 추워 궁궐 밖에 나가기 어려운 겨울부터 연초까지 이 놀이를 즐겼다고 한다.</string>
+    <string name="sajeong_info">사정전은 정무를 보는 집무실과 같은 역할을 했던 곳으로, 왕과 신하가 머리를 맞대며 학문을 토론하는 경연이 자주 벌어지기도 했다. 사정(思政)이란 생각하고 정치하라는 뜻을 담고 있다. 근정전 뒷편에 자리 잡고 있으며 좌우에 만춘전과 천추전을 두고 사정전의 공간 기능을 보완하도록 했다. 현재는 이 두 건물이 독립된 전각의 형태이지만 원래는 복도 각으로 연결되게 하였다. 사정전은 왕의 집무실인 만큼 왕의 주요활동이 행해진 곳이기도 하다. 특히 세종 대에는 종친들을 모아 연회를 베풀었을 뿐만 아니라, 공을 치는 놀이 타구가 자주 벌어졌다는 기록이 남아 있다. 세종은 왕자 시절부터 하인들과 어울려 타구를 했다. 특히 날씨가 추워 궁궐 밖에 나가기 어려운 겨울부터 연초까지 이 놀이를 즐겼다고 한다.</string>
     <!-- 자선당 -->
-    <string name="jaseon_info">&lt; 동궁(東宮)과 자선당(資善堂) &gt;\n\n동궁은 황태자·왕세자를 일컫는 말인 동시에 그들이 거처하는 궁 자체를 의미하기도 한다. 조선 초기의 동궁은 궁궐 밖에 있었는데, 경복궁 안에 동궁이 조성된 시기는 1427년(세종 9년) 9월이었다. 세종은 궐내의 정전 동쪽에 동궁을 지었고 자선당을 중심으로 하면서 승화당과 계조당을 추가로 지었다.\n자선당은 세자가 공부하는 장소이다. &apos;자선(資善)&apos;은 &apos;선함을 도움 받는다&apos;는 뜻으로, 북송(北宋) 때 황태자가 강학하는 장소를 자선당이라 한 것에서 유래했고 태자 혹은 세자가 공부하는 장소를 모두 자선이라 했다. 자선당이 창건되었을 때에는 국왕이 정사를 보는 장소로 사용되었고, 강녕전과 교태전 공사를 할 때에는 국왕이 머물기도 했다. 《세종실록》 오례에 의하면 세자와 관련된 의례는 모두 자선당에서 거행했다. 《국조오례의》에서는 자선당을 &apos;동궁의 정당&apos;이라 했고 궁궐지에서는 &apos;동궁&apos;이라 표현했다.</string>
+    <string name="jaseon_info"></string>
     <!-- 내소주방 -->
-    <string name="naesoju_info">&lt; 소주방(燒廚房) &gt;\n\n소주방은 음식을 조리·보관·제공하던 공간으로 흔히 수라간이라 부른다. 왕의 침전인 강녕전의 동쪽에 자리 잡고 있으며, 기능과 담당하는 음식 종류에 따라 크게 내소주방, 외소주방, 생과방으로 나뉜다. 궁중에서는 음식을 한곳에서 만들지 않고 각 전각마다 주방상궁이 딸려서 따로 음식을 만들어 먹었다. 내소주방에서는 왕과 왕비의 수라를 담당하였는데 주로 일상식과 각종 찬품(반찬)을 만들었다. 수라상은 왕의 침전으로 옮겨지는 동안 식어 버리기 쉬웠다. 때문에 배선실인 퇴선간에서 보관하였다가 식은 음식을 데워 다시 상을 지어 올렸다. 내소주방 동쪽으로는 외소주방이 위치해 있는데 차례나 탄신, 연회와 같은 왕실 행사에 쓰이는 잔치 음식을 장만하였다. 생과방은 평상시의 수라 이외에 음료와 과자 등의 다과류를 만들었다. 궁궐에 특별히 큰 행사가 열릴 때에는 잔치를 위하여 &apos;숙설소(熟設所)&apos;라는 임시기구를 설치하기도 하였다.</string>
+    <string name="naesoju_info"></string>
     <!-- 교태전 -->
-    <string name="gyotae_info">&lt; 교태전(交泰殿) &gt;\n\n교태전은 왕비의 침전이자 왕비가 업무를 처리하는 공간이다. 왕비는 교태전에 거처하면서 궁 안 생활을 총지휘했다. 궁궐 안의 건물 가운데 가장 화려하게 치장되었는데, 뒤뜰의 아미산 위에 아름다운 꽃무늬를 새긴 굴뚝이 남아 있어 왕비의 주택이 지녔던 높은 품격의 일면을 잘 보여 준다. 강녕전과 마찬가지로 지붕에 용마루를 두고 있지 않고, 내부에는 가구를 거의 두지 않은 것이 특징이다. 강녕전 영역과 달리 교태전은 양쪽 부속 건물인 원길헌, 함홍각, 건순각 등 여러 행각들이 복도로 연결되어 있어 건물 간 통행에 편리했다. 교태전 출입문인 양의문의 양쪽에는 행각이 위치한다. 이 행각에는 왕비의 수행인인 상궁나인들이 거처했다. 본래 경복궁이 창건되었을 때에는 강녕전이 국왕 부부의 침전이었으나, 세종 대에 왕비를 위한 공간으로 교태전을 마련한 것으로 추정된다.</string>
+    <string name="gyotae_info"></string>
     <!-- 향원정 -->
-    <string name="hyangwon_info">&lt; 향원정(香遠亭) &gt;\n\n향원정은 경복궁 후원의 향원지라는 연못의 인공 섬 위에 만든 정자이다. 왕족들의 사적인 휴식 공간으로 이용되었다. 경회루가 웅장하다면 향원정은 아늑한 분위기를 풍긴다. 향원정의 모태는 &apos;취로정(翠露亭)&apos;으로, 《세조실록》에 경복궁 후원에 정자를 세웠다는 기록이 있다. 이후 임진왜란 때 경복궁이 불타면서 소실되었다가 고종 때 다시 조성되면서 향원정이라는 이름을 얻게 되었다. 향원정이라는 이름은 중국 고전의 &apos;향기는 멀수록 더욱 맑다(香遠益淸)&apos;라는 구절에서 따온 것이라고 알려져 있다. 원래는 왕실 가족들이 이용하기에 편리하도록 북쪽 건청궁으로 이어지는 &apos;취향교&apos;라는 다리가 있었으나, 한국 전쟁 때 파괴된 후 지금처럼 남쪽으로 놓았다. 1880년대말에는 연못에서 스케이트 시범대회가 열려 군중의 호응을 얻기도 했다.</string>
+    <string name="hyangwon_info"></string>
     <!-- 수정전 -->
-    <string name="sujeong_info">&lt; 수정전(修政殿) &gt;\n\n</string>
+    <string name="sujeong_info"></string>
     <!-- 근정전 -->
-    <string name="geunjeong_info">&lt; 근정전(勤政殿) &gt;\n\n</string>
+    <string name="geunjeong_info"></string>
 
     <!-- 퀴즈 -->
     <!-- 자선당 -->
@@ -58,7 +58,7 @@
     <string name="hyangwon_quiz_q">문) 향원정 2층은 여름보다는 겨울을 보내기에 좋다.</string>
     <string name="hyangwon_quiz_a">답) X / 온돌이 깔린 1층이 겨울나기에 더 좋다.</string>
     <!-- 수정전 -->
-    <string name="sujeong_quiz_q">문) 수정전의 &apos;수정&apos;은 정사를 잘 수행한다는 의미이다.</string>
+    <string name="sujeong_quiz_q">문) 수정전의 수정은 정사를 잘 수행한다는 의미이다.</string>
     <string name="sujeong_quiz_a">답) O</string>
 
     <!-- 인물 대화 -->
@@ -92,7 +92,7 @@
     <string name="sajeong_naesi_s6">
         한 가지 귀띔을 드리자면, 지난밤 자시(오후 11시~오전 1시)경에\n세자저하의 침소에서 고양이 울음소리가 들렸다 하던데…. 흠흠!</string>
     <string name="sajeong_naesi_s7">
-        우선 세자저하의 침소가 있는 동궁전으로 가 보시는 게 어떠실런지요?\n</string>
+        우선 세자저하의 침소가 있는\n동궁전으로 가 보시는 게 어떠실런지요?\n</string>
 
     <!-- 자선당 세자 -->
     <string name="jaseon_seja_s1">
@@ -174,25 +174,24 @@
         그리고 태생이와 함께 놀던 노란 고양이를 한 마리 더 보았네.\n내 기척에 놀라 향원정 쪽으로 도망갔으니 그곳으로 가보도록 하게.</string>
 
     <!-- 향원정 고양이3(태양이) -->
-    <string name="hyangwon_cat3_s1">
-        야옹!\n(용케 나를 찾았군!)</string>
-    <string name="hyangwon_cat3_s2">
+    <string name="hyangwon_taeyang_s1">
+        야옹!\n(용케 냐를 찾았군!)</string>
+    <string name="hyangwon_taeyang_s2">
         냥 야아옹 냐냥냥!\n(여긴 내가 경복궁에서 소주방 다음으로 좋아하는 향원정이다냥!)</string>
-    <string name="hyangwon_cat3_s3">
+    <string name="hyangwon_taeyang_s3">
         야앙, 냐오오옹.\n(식사도 배불리 했겠다, 아름다운 경치를 구경하러 왔다냥.)</string>
-    <string name="hyangwon_cat3_s4">
+    <string name="hyangwon_taeyang_s4">
         니야앙 야옹 냥.\n(이곳 향원정은 상감마마를 비롯한 왕실 가족들만 출입할 수 있다냥.)</string>
-    <string name="hyangwon_cat3_s5">
+    <string name="hyangwon_taeyang_s5">
         냐웅 냐냐냥 야옹!\n(하지만 전하의 총애를 받는 우리는 마음대로 드냐들 수 있지!)</string>
-    <string name="hyangwon_cat3_s6">
+    <string name="hyangwon_taeyang_s6">
         냐냥냐 냐우웅 니양\n야옹, 야옹 냐냐냐냥!</string>
-    <string name="hyangwon_cat3_s7">
+    <string name="hyangwon_taeyang_s7">
         (1층은 온돌을 깔았고 2층은 마루로 되어 있어서\n여름엔 시원하게, 겨울엔 따뜻하게 보내는 데 제격이다냥!)</string>
-
     <!-- 퀴즈 맞춘 후 -->
-    <string name="hyangwon_cat3_s8">
+    <string name="hyangwon_taeyang_s8">
         냐웅 냥 니야아앙.\n(듣자하니 전하께서 냐를 애타게 찾으시는 모양이다냥.)</string>
-    <string name="hyangwon_cat3_s9">
+    <string name="hyangwon_taeyang_s9">
         냐냥!\n(우리는 수정전으로 가자냥. 냐를 따라오라냥!)</string>
 
     <!-- 수정전 내시 -->
@@ -207,23 +206,23 @@
     <string name="sujeong_naesi_s5">
         이곳 수정전은 선대이신 세종대왕 대에\n집현전으로 쓰였던 곳입니다. </string>
     <string name="sujeong_naesi_s6">
-        대왕께서 밤낮으로 연구하신 끝에 병인년 열매달(1446년 9월, 세종 28년)\n훈민정음을 창제하셨던 곳이기도 하지요.</string>
+        밤낮으로 연구하신 끝에 병인년 열매달(1446년 9월, 세종 28년)\n훈민정음을 창제하셨던 곳이기도 하지요.</string>
     <!-- 퀴즈 맞춘 후 -->
     <string name="sujeong_naesi_s7">
         역시 대단하십니다.\n앞서 근정전으로 들어가시지요.</string>
 
-    <!-- 근정전 고양이1, 2, 3, 묘종 -->
-    <string name="geunjeong_cat1_s1">
+    <!-- 근정전 고양이1(태평이), 2(태생이), 3(태양이), 묘종 -->
+    <string name="geunjeong_taepyeong_s1">
         우니양 우냐냐~\n(결국 우리를 모두 찾고 근정전에 왔구냥~)</string>
-    <string name="geunjeong_cat1_s2">
+    <string name="geunjeong_taepyeong_s2">
         냐웅 야오옹~\n(근정전의 ‘근정(勤政)’은 부지런하게 정치하라는 뜻이다냥~)</string>
-    <string name="geunjeong_cat2_s1">
+    <string name="geunjeong_taesaeng_s1">
         미야앙 먕….\n(경복궁의 중심 공간인 만큼 수많은 의식과 행사가 매년 열린다냥….)</string>
-    <string name="geunjeong_cat2_s2">
+    <string name="geunjeong_taesaeng_s2">
         미양 먀오오옹….\n(조선 전기부터 선조까지 총 일곱 명의 즉위식도 이곳에서 열렸다냥….)  </string>
-    <string name="geunjeong_cat3_s1">
+    <string name="geunjeong_taeyang_s1">
         냐냥 냐웅 야오오옹.\n(외국 사신을 접견하면서 불꽃놀이를 하기도 한다냥.)</string>
-    <string name="geunjeong_cat3_s2">
+    <string name="geunjeong_taeyang_s2">
         냐아아앙 냥!\n(또 과거 시험을 치르고 합격자를 발표하는 아주 중요한 곳이다냥!)</string>
     <string name="geunjeong_myojong_s1">
         마침내 태평이, 태생이, 태양이를 다시 품에 안게 되어\n기쁨이 하늘에 닿는 구려!</string>
