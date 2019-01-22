@@ -2,7 +2,10 @@ package com.sm.jangwon.myogyeong;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.media.MediaPlayer;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +18,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static com.sm.jangwon.myogyeong.MainActivity.GAME_PREFERENCES;
+
 public class Geunjeong extends AppCompatActivity {
 
     int i = 0;
@@ -24,13 +29,17 @@ public class Geunjeong extends AppCompatActivity {
     ImageView geunjeong_taeyang;
     ImageView geunjeong_myojong_smile;
     ImageView geunjeong_myojong_smile2;
+    ImageView geunjeong_info_icon;
 
     TextView geunjeong_taepyeong_name;
     TextView geunjeong_taesaeng_name;
     TextView geunjeong_taeyang_name;
     TextView geunjeong_myojong_name;
 
-    ImageView geunjeong_info_icon;
+    Intent building_info;
+
+    MediaPlayer promo_bgm;
+    MediaPlayer ending_bgm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +96,10 @@ public class Geunjeong extends AppCompatActivity {
         Animation geunjeong_cat1_s1_anim = AnimationUtils.loadAnimation(this, R.anim.dialog_text_in_anim);
         geunjeong_cat1_s1.startAnimation(geunjeong_cat1_s1_anim);
 
+        // 배경 효과음
+        promo_bgm = MediaPlayer.create(this, R.raw.gunbam);
+        ending_bgm = MediaPlayer.create(this, R.raw.ending);
+
         // 텍스트 전환
         changeView(i);
         geunjeong_dialog.setOnClickListener(new View.OnClickListener(){
@@ -97,6 +110,7 @@ public class Geunjeong extends AppCompatActivity {
                 if(i == 13) {
                     Intent geunjeong_i = new Intent(getApplicationContext(), Ending.class);
                     startActivity(geunjeong_i);
+                    Geunjeong.this.finish();
                 }
             }
         });
@@ -130,7 +144,6 @@ public class Geunjeong extends AppCompatActivity {
                 tv8.setVisibility(View.INVISIBLE);
                 tv9.setVisibility(View.INVISIBLE);
                 tv10.setVisibility(View.INVISIBLE);
-                geunjeong_taepyeong.setVisibility(View.VISIBLE);
                 geunjeong_taesaeng.setVisibility(View.INVISIBLE);
                 geunjeong_taeyang.setVisibility(View.INVISIBLE);
                 geunjeong_myojong_smile.setVisibility(View.INVISIBLE);
@@ -153,7 +166,6 @@ public class Geunjeong extends AppCompatActivity {
                 tv8.setVisibility(View.INVISIBLE);
                 tv9.setVisibility(View.INVISIBLE);
                 tv10.setVisibility(View.INVISIBLE);
-                geunjeong_taepyeong.setVisibility(View.VISIBLE);
                 geunjeong_taesaeng.setVisibility(View.INVISIBLE);
                 geunjeong_taeyang.setVisibility(View.INVISIBLE);
                 geunjeong_myojong_smile.setVisibility(View.INVISIBLE);
@@ -176,7 +188,9 @@ public class Geunjeong extends AppCompatActivity {
                 tv8.setVisibility(View.INVISIBLE);
                 tv9.setVisibility(View.INVISIBLE);
                 tv10.setVisibility(View.INVISIBLE);
-                geunjeong_taepyeong.setVisibility(View.INVISIBLE);
+                // invisible로 사라지지 않는 태평이를 위한 애니메이션;)
+                Animation taepyeong_fade_out = AnimationUtils.loadAnimation(this, R.anim.taepyeong_fade_out);
+                geunjeong_taepyeong.startAnimation(taepyeong_fade_out);
                 geunjeong_taesaeng.setVisibility(View.VISIBLE);
                 geunjeong_taeyang.setVisibility(View.INVISIBLE);
                 geunjeong_myojong_smile.setVisibility(View.INVISIBLE);
@@ -199,7 +213,6 @@ public class Geunjeong extends AppCompatActivity {
                 tv8.setVisibility(View.INVISIBLE);
                 tv9.setVisibility(View.INVISIBLE);
                 tv10.setVisibility(View.INVISIBLE);
-                geunjeong_taepyeong.setVisibility(View.INVISIBLE);
                 geunjeong_taesaeng.setVisibility(View.VISIBLE);
                 geunjeong_taeyang.setVisibility(View.INVISIBLE);
                 geunjeong_myojong_smile.setVisibility(View.INVISIBLE);
@@ -222,7 +235,6 @@ public class Geunjeong extends AppCompatActivity {
                 tv8.setVisibility(View.INVISIBLE);
                 tv9.setVisibility(View.INVISIBLE);
                 tv10.setVisibility(View.INVISIBLE);
-                geunjeong_taepyeong.setVisibility(View.INVISIBLE);
                 geunjeong_taesaeng.setVisibility(View.INVISIBLE);
                 geunjeong_taeyang.setVisibility(View.VISIBLE);
                 geunjeong_myojong_smile.setVisibility(View.INVISIBLE);
@@ -245,7 +257,6 @@ public class Geunjeong extends AppCompatActivity {
                 tv8.setVisibility(View.INVISIBLE);
                 tv9.setVisibility(View.INVISIBLE);
                 tv10.setVisibility(View.INVISIBLE);
-                geunjeong_taepyeong.setVisibility(View.INVISIBLE);
                 geunjeong_taesaeng.setVisibility(View.INVISIBLE);
                 geunjeong_taeyang.setVisibility(View.VISIBLE);
                 geunjeong_myojong_smile.setVisibility(View.INVISIBLE);
@@ -268,7 +279,6 @@ public class Geunjeong extends AppCompatActivity {
                 tv8.setVisibility(View.INVISIBLE);
                 tv9.setVisibility(View.INVISIBLE);
                 tv10.setVisibility(View.INVISIBLE);
-                geunjeong_taepyeong.setVisibility(View.INVISIBLE);
                 geunjeong_taesaeng.setVisibility(View.INVISIBLE);
                 geunjeong_taeyang.setVisibility(View.VISIBLE);
                 geunjeong_myojong_smile.setVisibility(View.INVISIBLE);
@@ -277,12 +287,14 @@ public class Geunjeong extends AppCompatActivity {
                 geunjeong_taesaeng_name.setVisibility(View.INVISIBLE);
                 geunjeong_taeyang_name.setVisibility(View.VISIBLE);
                 geunjeong_myojong_name.setVisibility(View.INVISIBLE);
-                geunjeong_info_icon.setVisibility(View.INVISIBLE);
+                geunjeong_info_icon.setVisibility(View.VISIBLE);
+                // 근정전 설명
+                building_info = new Intent(this, CustomDialog.class);
                 geunjeong_info_icon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        CustomDialog building_info = new CustomDialog(Geunjeong.this);
-                        building_info.callFunction();
+                        building_info.putExtra("count","7");
+                        startActivityForResult(building_info,1);
                     }
                 });
                 i++;
@@ -298,7 +310,6 @@ public class Geunjeong extends AppCompatActivity {
                 tv8.setVisibility(View.INVISIBLE);
                 tv9.setVisibility(View.INVISIBLE);
                 tv10.setVisibility(View.INVISIBLE);
-                geunjeong_taepyeong.setVisibility(View.INVISIBLE);
                 geunjeong_taesaeng.setVisibility(View.INVISIBLE);
                 geunjeong_taeyang.setVisibility(View.INVISIBLE);
                 geunjeong_myojong_smile.setVisibility(View.VISIBLE);
@@ -321,7 +332,6 @@ public class Geunjeong extends AppCompatActivity {
                 tv8.setVisibility(View.VISIBLE);
                 tv9.setVisibility(View.INVISIBLE);
                 tv10.setVisibility(View.INVISIBLE);
-                geunjeong_taepyeong.setVisibility(View.INVISIBLE);
                 geunjeong_taesaeng.setVisibility(View.INVISIBLE);
                 geunjeong_taeyang.setVisibility(View.INVISIBLE);
                 geunjeong_myojong_smile.setVisibility(View.INVISIBLE);
@@ -344,7 +354,6 @@ public class Geunjeong extends AppCompatActivity {
                 tv8.setVisibility(View.VISIBLE);
                 tv9.setVisibility(View.INVISIBLE);
                 tv10.setVisibility(View.INVISIBLE);
-                geunjeong_taepyeong.setVisibility(View.INVISIBLE);
                 geunjeong_taesaeng.setVisibility(View.INVISIBLE);
                 geunjeong_taeyang.setVisibility(View.INVISIBLE);
                 geunjeong_myojong_smile.setVisibility(View.INVISIBLE);
@@ -354,14 +363,11 @@ public class Geunjeong extends AppCompatActivity {
                 geunjeong_taeyang_name.setVisibility(View.INVISIBLE);
                 geunjeong_myojong_name.setVisibility(View.VISIBLE);
                 geunjeong_info_icon.setVisibility(View.INVISIBLE);
+                // 장원 급제
+                Intent promo = new Intent(this, Promotion.class);
+                startActivityForResult(promo,1);
+                promo_bgm.start();
                 i++;
-
-
-
-                // 장원 급제 화면
-
-
-
                 break;
             case 10:
                 tv1.setVisibility(View.INVISIBLE);
@@ -374,7 +380,6 @@ public class Geunjeong extends AppCompatActivity {
                 tv8.setVisibility(View.INVISIBLE);
                 tv9.setVisibility(View.VISIBLE);
                 tv10.setVisibility(View.INVISIBLE);
-                geunjeong_taepyeong.setVisibility(View.INVISIBLE);
                 geunjeong_taesaeng.setVisibility(View.INVISIBLE);
                 geunjeong_taeyang.setVisibility(View.INVISIBLE);
                 geunjeong_myojong_smile.setVisibility(View.VISIBLE);
@@ -397,7 +402,6 @@ public class Geunjeong extends AppCompatActivity {
                 tv8.setVisibility(View.INVISIBLE);
                 tv9.setVisibility(View.INVISIBLE);
                 tv10.setVisibility(View.VISIBLE);
-                geunjeong_taepyeong.setVisibility(View.INVISIBLE);
                 geunjeong_taesaeng.setVisibility(View.INVISIBLE);
                 geunjeong_taeyang.setVisibility(View.INVISIBLE);
                 geunjeong_myojong_smile.setVisibility(View.INVISIBLE);
@@ -407,6 +411,8 @@ public class Geunjeong extends AppCompatActivity {
                 geunjeong_taeyang_name.setVisibility(View.INVISIBLE);
                 geunjeong_myojong_name.setVisibility(View.VISIBLE);
                 geunjeong_info_icon.setVisibility(View.INVISIBLE);
+                promo_bgm.release();
+                ending_bgm.start();
                 i++;
                 break;
             case 12:
@@ -420,7 +426,6 @@ public class Geunjeong extends AppCompatActivity {
                 tv8.setVisibility(View.INVISIBLE);
                 tv9.setVisibility(View.INVISIBLE);
                 tv10.setVisibility(View.VISIBLE);
-                geunjeong_taepyeong.setVisibility(View.INVISIBLE);
                 geunjeong_taesaeng.setVisibility(View.INVISIBLE);
                 geunjeong_taeyang.setVisibility(View.INVISIBLE);
                 geunjeong_myojong_smile.setVisibility(View.INVISIBLE);
@@ -435,6 +440,15 @@ public class Geunjeong extends AppCompatActivity {
         }
     }
 
+    // 중간 저장
+    public void onStop() {
+        super.onStop();
+        SharedPreferences settings = this.getApplicationContext().getSharedPreferences(GAME_PREFERENCES, MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = settings.edit();
+        prefEditor.putInt("goTO", 8);
+        prefEditor.commit();
+    }
+
     // 백(취소)키가 눌렸을 때 종료 여부를 묻는 다이얼로그 창
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -445,7 +459,10 @@ public class Geunjeong extends AppCompatActivity {
             d.setPositiveButton("예", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Geunjeong.this.finish();
+                    onStop();
+                    ActivityCompat.finishAffinity(Geunjeong.this);
+                    System.runFinalization();
+                    System.exit(0);
                 }
             });
             d.setNegativeButton("아니요", new DialogInterface.OnClickListener() {

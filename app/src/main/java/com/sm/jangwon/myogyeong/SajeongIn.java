@@ -2,7 +2,12 @@ package com.sm.jangwon.myogyeong;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,8 +19,12 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import static com.sm.jangwon.myogyeong.MainActivity.GAME_PREFERENCES;
 
 public class SajeongIn extends AppCompatActivity {
 
@@ -25,8 +34,9 @@ public class SajeongIn extends AppCompatActivity {
     ImageView sajeong_in_myojong2;
     ImageView sajeong_in_myojong_sad;
     ImageView sajeong_in_myojong_sad2;
-
     ImageView sajeong_in_info_icon;
+
+    Intent building_info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +87,10 @@ public class SajeongIn extends AppCompatActivity {
         Animation sajeong_in_myojong_s1_anim = AnimationUtils.loadAnimation(this, R.anim.dialog_text_in_anim);
         sajeong_in_myojong_s1.startAnimation(sajeong_in_myojong_s1_anim);
 
+        // 책장 넘기는 소리 위한 사운드풀
+        final SoundPool dialog_bgm = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
+        final int dialog_sound = dialog_bgm.load(this, R.raw.dialog_sound, 1);
+
         // 텍스트 전환
         changeView(i);
         sajeong_in_dialog.setOnClickListener(new View.OnClickListener(){
@@ -87,10 +101,12 @@ public class SajeongIn extends AppCompatActivity {
                 if(i == 9) {
                     Intent sajeong_in_i = new Intent(getApplicationContext(), Sajeong.class);
                     startActivity(sajeong_in_i);
+                    // 책장 넘기는 소리
+                    dialog_bgm.play(dialog_sound, 1, 1, 1, 0, 1);
+                    SajeongIn.this.finish();
                 }
             }
         });
-
     }
 
     // 텍스트 전환
@@ -210,11 +226,13 @@ public class SajeongIn extends AppCompatActivity {
                 sajeong_in_myojong_sad.setVisibility(View.INVISIBLE);
                 sajeong_in_myojong_sad2.setVisibility(View.INVISIBLE);
                 sajeong_in_info_icon.setVisibility(View.VISIBLE);
+                // 사정전 설명
+                building_info = new Intent(this, CustomDialog.class);
                 sajeong_in_info_icon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        CustomDialog building_info = new CustomDialog(SajeongIn.this);
-                        building_info.callFunction();
+                        building_info.putExtra("count","1");
+                        startActivityForResult(building_info,1);
                     }
                 });
                 i++;
@@ -252,6 +270,15 @@ public class SajeongIn extends AppCompatActivity {
         }
     }
 
+    // 중간 저장
+    public void onStop() {
+        super.onStop();
+        SharedPreferences settings = this.getApplicationContext().getSharedPreferences(GAME_PREFERENCES, MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = settings.edit();
+        prefEditor.putInt("goTO", 1);
+        prefEditor.commit();
+    }
+
     // 백(취소)키가 눌렸을 때 종료 여부를 묻는 다이얼로그 창
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -262,7 +289,10 @@ public class SajeongIn extends AppCompatActivity {
             d.setPositiveButton("예", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    SajeongIn.this.finish();
+                    onStop();
+                    ActivityCompat.finishAffinity(SajeongIn.this);
+                    System.runFinalization();
+                    System.exit(0);
                 }
             });
             d.setNegativeButton("아니요", new DialogInterface.OnClickListener() {

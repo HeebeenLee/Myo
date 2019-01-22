@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BuildingList"
+    android:background="@drawable/menu">
+
+    <!-- 리스트 이미지 -->
+    <ImageView
+        android:id="@+id/list_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="20dp"
+        android:src="@drawable/building_list"
+        android:background="#00ff0000" />
+
+    <!-- 스탬프 -->
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.53"
+        app:layout_constraintHorizontal_bias="0.73">
+
+        <ImageView
+            android:id="@+id/stamp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:src="@drawable/stamp" />
+
+        <ImageView
+            android:id="@+id/stamp2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            app:layout_constraintTop_toBottomOf="@id/stamp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/stamp" />
+
+        <ImageView
+            android:id="@+id/stamp3"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            app:layout_constraintTop_toBottomOf="@id/stamp2"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/stamp" />
+
+        <ImageView
+            android:id="@+id/stamp4"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            app:layout_constraintTop_toBottomOf="@id/stamp3"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/stamp" />
+
+        <ImageView
+            android:id="@+id/stamp5"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            app:layout_constraintTop_toBottomOf="@id/stamp4"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/stamp" />
+
+        <ImageView
+            android:id="@+id/stamp6"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            app:layout_constraintTop_toBottomOf="@id/stamp5"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/stamp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <!-- X 버튼 -->
+    <Button
+        android:id="@+id/list_close_btn"
+        android:onClick="mOnClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="10dp"
+        android:text="X"
+        android:fontFamily="@font/m_heullim"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:background="#00ff0000" />
+
+</android.support.constraint.ConstraintLayout>

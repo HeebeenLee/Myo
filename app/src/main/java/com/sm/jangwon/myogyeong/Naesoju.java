@@ -2,7 +2,11 @@ package com.sm.jangwon.myogyeong;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +19,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static com.sm.jangwon.myogyeong.MainActivity.GAME_PREFERENCES;
+
 public class Naesoju extends AppCompatActivity {
 
     int i = 0;
@@ -23,12 +29,12 @@ public class Naesoju extends AppCompatActivity {
     ImageView naesoju_sanggung2;
     ImageView naesoju_sanggung_smile;
     ImageView naesoju_sanggung_smile2;
-
     ImageView naesoju_cat1;
     ImageView naesoju_cat2_black;
     ImageView naesoju_cat3_black;
-
     ImageView naesoju_info_icon;
+
+    Intent building_info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +106,10 @@ public class Naesoju extends AppCompatActivity {
         naesoju_cat2_black.startAnimation(naesoju_cat_anim);
         naesoju_cat3_black.startAnimation(naesoju_cat_anim);
 
+        // 책장 넘기는 소리 위한 사운드풀
+        final SoundPool dialog_bgm = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
+        final int dialog_sound = dialog_bgm.load(this, R.raw.dialog_sound, 1);
+
         // 텍스트 전환
         changeView(i);
         naesoju_dialog.setOnClickListener(new View.OnClickListener(){
@@ -109,14 +119,16 @@ public class Naesoju extends AppCompatActivity {
                 // 퀴즈
                 if(i == 8)  {
                     Intent go_quiz  = new Intent(getApplicationContext(), Quiz.class);
-                    go_quiz.putExtra("count","1");
+                    go_quiz.putExtra("count","2");
                     startActivityForResult(go_quiz, 3000);
                 }
 
                 // 화면 전환
                 if(i == 12) {
-                    Intent naesoju_i = new Intent(getApplicationContext(), Gyotae.class);
+                    Intent naesoju_i = new Intent(getApplicationContext(), Menu.class);
                     startActivity(naesoju_i);
+                    // 책장 넘기는 소리
+                    dialog_bgm.play(dialog_sound, 1, 1, 1, 0, 1);
                 }
             }
         });
@@ -204,11 +216,13 @@ public class Naesoju extends AppCompatActivity {
                 naesoju_sanggung_smile.setVisibility(View.INVISIBLE);
                 naesoju_sanggung_smile2.setVisibility(View.INVISIBLE);
                 naesoju_info_icon.setVisibility(View.VISIBLE);
+                // 내소주방 설명
+                building_info = new Intent(this, CustomDialog.class);
                 naesoju_info_icon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        CustomDialog building_info = new CustomDialog(Naesoju.this);
-                        building_info.callFunction();
+                        building_info.putExtra("count","3");
+                        startActivityForResult(building_info,1);
                     }
                 });
                 i++;
@@ -353,6 +367,15 @@ public class Naesoju extends AppCompatActivity {
         }
     }
 
+    // 중간 저장
+    public void onStop() {
+        super.onStop();
+        SharedPreferences settings = this.getApplicationContext().getSharedPreferences(GAME_PREFERENCES, MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = settings.edit();
+        prefEditor.putInt("goTO", 4);
+        prefEditor.commit();
+    }
+
     // 백(취소)키가 눌렸을 때 종료 여부를 묻는 다이얼로그 창
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -363,7 +386,10 @@ public class Naesoju extends AppCompatActivity {
             d.setPositiveButton("예", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Naesoju.this.finish();
+                    onStop();
+                    ActivityCompat.finishAffinity(Naesoju.this);
+                    System.runFinalization();
+                    System.exit(0);
                 }
             });
             d.setNegativeButton("아니요", new DialogInterface.OnClickListener() {

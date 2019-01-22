@@ -6,4 +6,87 @@
     android:layout_height="match_parent"
     tools:context=".Ending">
 
+    <!-- 배경 이미지 -->
+    <ImageView
+        android:id="@+id/ending_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ending_bg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/ending_layout">
+
+        <!-- 로고 -->
+        <ImageView
+            android:id="@+id/ending_title"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"
+            android:src="@drawable/app_logo"
+            android:background="#00ff0000" />
+
+        <!-- 만든 사람 -->
+        <TextView
+            android:id="@+id/made_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="@string/made_by"
+            android:fontFamily="@font/m_jeongja"
+            android:textSize="20sp"
+            android:lineSpacingExtra="10dp"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/ending_layout2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 로고 -->
+            <ImageView
+                android:id="@+id/ending_title2"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center"
+                android:src="@drawable/app_logo"
+                android:background="#00ff0000" />
+
+            <!-- 다음에도 부탁하네 -->
+            <TextView
+                android:id="@+id/next_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="50dp"
+                android:text="다음에도 부탁하네!"
+                android:fontFamily="@font/g_batang"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
 </android.support.constraint.ConstraintLayout>

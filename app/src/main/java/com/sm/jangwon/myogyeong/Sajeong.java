@@ -2,7 +2,11 @@ package com.sm.jangwon.myogyeong;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +18,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import static com.sm.jangwon.myogyeong.MainActivity.GAME_PREFERENCES;
 
 public class Sajeong extends AppCompatActivity {
 
@@ -21,7 +26,6 @@ public class Sajeong extends AppCompatActivity {
 
     ImageView sajeong_naesi;
     ImageView sajeong_naesi2;
-
     ImageView sajeong_cat1_black;
     ImageView sajeong_cat2_black;
     ImageView sajeong_cat3_black;
@@ -94,6 +98,10 @@ public class Sajeong extends AppCompatActivity {
         sajeong_cat2_black.startAnimation(sajeong_cat1_black_anim);
         sajeong_cat3_black.startAnimation(sajeong_cat1_black_anim);
 
+        // 책장 넘기는 소리 위한 사운드풀
+        final SoundPool dialog_bgm = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
+        final int dialog_sound = dialog_bgm.load(this, R.raw.dialog_sound, 1);
+
         // 텍스트 전환
         changeView(i);
         sajeong_dialog.setOnClickListener(new View.OnClickListener(){
@@ -102,8 +110,10 @@ public class Sajeong extends AppCompatActivity {
                 changeView(i);
                 // 화면 전환
                 if(i == 8) {
-                    Intent sajeong_i = new Intent(getApplicationContext(), Jaseon.class);
+                    Intent sajeong_i = new Intent(getApplicationContext(), Menu.class);
                     startActivity(sajeong_i);
+                    // 책장 넘기는 소리
+                    dialog_bgm.play(dialog_sound, 1, 1, 1, 0, 1);
                 }
             }
         });
@@ -219,6 +229,15 @@ public class Sajeong extends AppCompatActivity {
         }
     }
 
+    // 중간 저장
+    public void onStop() {
+        super.onStop();
+        SharedPreferences settings = this.getApplicationContext().getSharedPreferences(GAME_PREFERENCES, MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = settings.edit();
+        prefEditor.putInt("goTO", 2);
+        prefEditor.commit();
+    }
+
     // 백(취소)키가 눌렸을 때 종료 여부를 묻는 다이얼로그 창
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -229,7 +248,10 @@ public class Sajeong extends AppCompatActivity {
             d.setPositiveButton("예", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Sajeong.this.finish();
+                    onStop();
+                    ActivityCompat.finishAffinity(Sajeong.this);
+                    System.runFinalization();
+                    System.exit(0);
                 }
             });
             d.setNegativeButton("아니요", new DialogInterface.OnClickListener() {

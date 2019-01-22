@@ -43,4 +43,20 @@
         android:src="@drawable/menu_list"
         android:background="#00ff0000" />
 
+    <!-- X 버튼 -->
+    <Button
+        android:id="@+id/menu_close_btn"
+        android:onClick="mOnClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="10dp"
+        android:text="X"
+        android:fontFamily="@font/m_heullim"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:background="#00ff0000" />
+
 </android.support.constraint.ConstraintLayout>

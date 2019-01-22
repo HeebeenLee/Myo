@@ -1,22 +1,23 @@
 package com.sm.jangwon.myogyeong;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
+import android.view.KeyEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
 public class QuizPop extends AppCompatActivity {
 
     TextView txtText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-
         super.onCreate(savedInstanceState);
 
         // 화면 가로 고정
@@ -27,33 +28,51 @@ public class QuizPop extends AppCompatActivity {
         setContentView(R.layout.activity_quiz_pop);
 
         txtText = (TextView)findViewById(R.id.txtText);
-//데이터 가져오기
+
+        // 데이터 가져오기
         Intent intent = getIntent();
         String data = intent.getStringExtra("data");
         txtText.setText(data);
     }
-    public void mOnClose(View v){
-        //데이터 전달하기
+
+    public void mOnClose(View v) {
+        // 데이터 전달하기
         Intent intent = new Intent();
         intent.putExtra("result", "Close Popup");
         setResult(RESULT_OK, intent);
 
-        //액티비티(팝업) 닫기
+        // 액티비티(팝업) 닫기
         this.finish();
-    }
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        //바깥레이어 클릭시 안닫히게
-        if(event.getAction()==MotionEvent.ACTION_OUTSIDE){
-            return false;
-        }
-        return true;
+        overridePendingTransition(0, 0);
     }
 
+    // 백(취소)키가 눌렸을 때 종료 여부를 묻는 다이얼로그 창
     @Override
-    public void onBackPressed() {
-        //안드로이드 백버튼 막기
-        return;
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if((keyCode == KeyEvent.KEYCODE_BACK)) {
+            AlertDialog.Builder d = new AlertDialog.Builder(QuizPop.this);
+            d.setMessage("묘한 경복궁을 종료할까요?");
+
+            d.setPositiveButton("예", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    onStop();
+                    ActivityCompat.finishAffinity(QuizPop.this);
+                    System.runFinalization();
+                    System.exit(0);
+                }
+            });
+            d.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+
+            d.show();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
 }

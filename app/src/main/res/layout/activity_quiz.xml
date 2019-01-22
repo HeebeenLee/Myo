@@ -1,142 +1,115 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/quiz_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="10dp"
-    android:background="@drawable/quiz"
-    tools:context=".Quiz">
+    tools:context=".Quiz"
+    android:id="@+id/quiz_bg"
+    android:background="@drawable/quiz_bg">
 
+    <!-- 자선당 -->
     <TextView
         android:id="@+id/jaseon_quiz_q"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="90dp"
-        android:layout_marginTop="180dp"
-        android:maxLines="2"
-        android:paddingTop="5dp"
-        android:text="@string/jaseon_quiz_q"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintBottom_toTopOf="@id/right_btn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="50dp"
+        android:text="@string/jaseon_quiz_q"
+        android:fontFamily="@font/ebs_jusigyeong"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold" />
 
+    <!-- 내소주방 -->
     <TextView
         android:id="@+id/naesoju_quiz_q"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="90dp"
-        android:layout_marginTop="180dp"
-        android:maxLines="2"
-        android:paddingTop="5dp"
-        android:text="@string/naesoju_quiz_q"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintBottom_toTopOf="@id/right_btn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="50dp"
+        android:text="@string/naesoju_quiz_q"
+        android:fontFamily="@font/ebs_jusigyeong"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold" />
 
+    <!-- 교태전 -->
     <TextView
         android:id="@+id/qyotae_quiz_q"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="90dp"
-        android:layout_marginTop="180dp"
-        android:maxLines="2"
-        android:paddingTop="5dp"
-        android:text="@string/gyotae_quiz_q"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintBottom_toTopOf="@id/right_btn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="50dp"
+        android:text="@string/gyotae_quiz_q"
+        android:fontFamily="@font/ebs_jusigyeong"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold" />
 
+    <!-- 향원정 -->
     <TextView
         android:id="@+id/hyangwon_quiz_q"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="90dp"
-        android:layout_marginTop="180dp"
-        android:maxLines="2"
-        android:paddingTop="5dp"
-        android:text="@string/hyangwon_quiz_q"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintBottom_toTopOf="@id/right_btn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="50dp"
+        android:text="@string/hyangwon_quiz_q"
+        android:fontFamily="@font/ebs_jusigyeong"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold" />
 
+    <!-- 수정전 -->
     <TextView
         android:id="@+id/sujeong_quiz_q"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="90dp"
-        android:layout_marginTop="72dp"
-        android:maxLines="2"
-        android:paddingTop="5dp"
-        android:text="@string/sujeong_quiz_q"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintBottom_toTopOf="@id/right_btn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
+        android:layout_margin="50dp"
+        android:text="@string/sujeong_quiz_q"
+        android:fontFamily="@font/ebs_jusigyeong"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+    
+    <!-- O -->
     <ImageButton
         android:id="@+id/right_btn"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="156dp"
-        android:adjustViewBounds="true"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
         android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:adjustViewBounds="true"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="112dp" />
-    <!--android:src="@drawable/right"-->
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/wrong_btn"
+        app:layout_constraintVertical_bias="0.7"
+        android:src="@drawable/right_btn"
+        android:background="#00ff0000" />
 
+    <!-- X -->
     <ImageButton
         android:id="@+id/wrong_btn"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:layout_marginTop="156dp"
-        android:layout_marginEnd="116dp"
-        android:layout_marginRight="116dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/nextgo"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/dialog_next"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="16dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/right_btn"
+        app:layout_constraintVertical_bias="0.7"
+        android:src="@drawable/wrong_btn"
+        android:background="#00ff0000" />
 
 </android.support.constraint.ConstraintLayout>

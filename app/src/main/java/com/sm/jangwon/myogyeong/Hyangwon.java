@@ -2,7 +2,11 @@ package com.sm.jangwon.myogyeong;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,18 +19,21 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static com.sm.jangwon.myogyeong.MainActivity.GAME_PREFERENCES;
+
 public class Hyangwon extends AppCompatActivity {
 
     int i = 0;
 
     ImageView hyangwon_taeyang;
-
     ImageView hyangwon_cat1;
     ImageView hyangwon_cat2;
     ImageView hyangwon_cat3_black;
     ImageView hyangwon_cat3;
-
     ImageView hyangwon_info_icon;
+
+    Intent building_info;
+    Intent find_cat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +103,10 @@ public class Hyangwon extends AppCompatActivity {
         hyangwon_cat2.startAnimation(hyangwon_cat_anim);
         hyangwon_cat3_black.startAnimation(hyangwon_cat_anim);
 
+        // 책장 넘기는 소리 위한 사운드풀
+        final SoundPool dialog_bgm = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
+        final int dialog_sound = dialog_bgm.load(this, R.raw.dialog_sound, 1);
+
         // 텍스트 전환
         changeView(i);
         hyangwon_dialog.setOnClickListener(new View.OnClickListener(){
@@ -105,14 +116,16 @@ public class Hyangwon extends AppCompatActivity {
                 // 퀴즈
                 if(i == 10)  {
                     Intent go_quiz  = new Intent(getApplicationContext(), Quiz.class);
-                    go_quiz.putExtra("count","1");
+                    go_quiz.putExtra("count","4");
                     startActivityForResult(go_quiz, 3000);
                 }
 
                 // 화면 전환
                 if(i == 13) {
-                    Intent hyangwon_i = new Intent(getApplicationContext(), Sujeong.class);
+                    Intent hyangwon_i = new Intent(getApplicationContext(), Menu.class);
                     startActivity(hyangwon_i);
+                    // 책장 넘기는 소리
+                    dialog_bgm.play(dialog_sound, 1, 1, 1, 0, 1);
                 }
             }
         });
@@ -160,15 +173,12 @@ public class Hyangwon extends AppCompatActivity {
                 tv9.setVisibility(View.INVISIBLE);
                 hyangwon_cat3.setVisibility(View.INVISIBLE);
                 hyangwon_info_icon.setVisibility(View.INVISIBLE);
+                // 고양이 획득
+                find_cat = new Intent(this, FindCat.class);
+                find_cat.putExtra("where","3");
+                startActivityForResult(find_cat,1);
                 i++;
                 break;
-
-
-
-                // 고양이 획득
-
-
-
             case 2:
                 tv1.setVisibility(View.INVISIBLE);
                 tv2.setVisibility(View.VISIBLE);
@@ -265,11 +275,14 @@ public class Hyangwon extends AppCompatActivity {
                 tv9.setVisibility(View.INVISIBLE);
                 hyangwon_cat3.setVisibility(View.VISIBLE);
                 hyangwon_info_icon.setVisibility(View.VISIBLE);
+                // 향원정 설명
+                building_info = new Intent(this, CustomDialog.class);
                 hyangwon_info_icon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        CustomDialog building_info = new CustomDialog(Hyangwon.this);
-                        building_info.callFunction();
+                        building_info.putExtra("count","5");
+                        startActivityForResult(building_info,1);
+
                     }
                 });
                 i++;
@@ -334,6 +347,15 @@ public class Hyangwon extends AppCompatActivity {
         }
     }
 
+    // 중간 저장
+    public void onStop() {
+        super.onStop();
+        SharedPreferences settings = this.getApplicationContext().getSharedPreferences(GAME_PREFERENCES, MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = settings.edit();
+        prefEditor.putInt("goTO", 6);
+        prefEditor.commit();
+    }
+
     // 백(취소)키가 눌렸을 때 종료 여부를 묻는 다이얼로그 창
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -344,7 +366,10 @@ public class Hyangwon extends AppCompatActivity {
             d.setPositiveButton("예", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Hyangwon.this.finish();
+                    onStop();
+                    ActivityCompat.finishAffinity(Hyangwon.this);
+                    System.runFinalization();
+                    System.exit(0);
                 }
             });
             d.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
